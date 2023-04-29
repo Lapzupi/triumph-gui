@@ -44,11 +44,10 @@ public final class GuiListener implements Listener {
      */
     @EventHandler
     public void onGuiClick(final InventoryClickEvent event) {
-        if (!(event.getInventory().getHolder() instanceof BaseGui)) return;
+        if (!(event.getInventory().getHolder() instanceof BaseGui gui)) return;
 
         // Gui
-        final BaseGui gui = (BaseGui) event.getInventory().getHolder();
-
+        
         // Executes the outside click action
         final GuiAction<InventoryClickEvent> outsideClickAction = gui.getOutsideClickAction();
         if (outsideClickAction != null && event.getClickedInventory() == null) {
@@ -83,9 +82,8 @@ public final class GuiListener implements Listener {
         GuiItem guiItem;
 
         // Checks whether it's a paginated gui or not
-        if (gui instanceof PaginatedGui) {
-            final PaginatedGui paginatedGui = (PaginatedGui) gui;
-
+        if (gui instanceof PaginatedGui paginatedGui) {
+            
             // Gets the gui item from the added items or the page items
             guiItem = paginatedGui.getGuiItem(event.getSlot());
             if (guiItem == null) guiItem = paginatedGui.getPageItem(event.getSlot());
@@ -109,11 +107,10 @@ public final class GuiListener implements Listener {
      */
     @EventHandler
     public void onGuiDrag(final InventoryDragEvent event) {
-        if (!(event.getInventory().getHolder() instanceof BaseGui)) return;
+        if (!(event.getInventory().getHolder() instanceof BaseGui gui)) return;
 
         // Gui
-        final BaseGui gui = (BaseGui) event.getInventory().getHolder();
-
+        
         // Default click action and checks weather or not there is a default action and executes it
         final GuiAction<InventoryDragEvent> dragAction = gui.getDragAction();
         if (dragAction != null) dragAction.execute(event);
@@ -126,11 +123,10 @@ public final class GuiListener implements Listener {
      */
     @EventHandler
     public void onGuiClose(final InventoryCloseEvent event) {
-        if (!(event.getInventory().getHolder() instanceof BaseGui)) return;
+        if (!(event.getInventory().getHolder() instanceof BaseGui gui)) return;
 
         // GUI
-        final BaseGui gui = (BaseGui) event.getInventory().getHolder();
-
+        
         // If it's a persistent paginated gui saves the current page modifications
         if (gui instanceof PersistentPaginatedGui) {
             ((PersistentPaginatedGui) gui).savePage();
@@ -150,11 +146,10 @@ public final class GuiListener implements Listener {
      */
     @EventHandler
     public void onGuiOpen(final InventoryOpenEvent event) {
-        if (!(event.getInventory().getHolder() instanceof BaseGui)) return;
+        if (!(event.getInventory().getHolder() instanceof BaseGui gui)) return;
 
         // GUI
-        final BaseGui gui = (BaseGui) event.getInventory().getHolder();
-
+        
         // The GUI action for opening
         final GuiAction<InventoryOpenEvent> openAction = gui.getOpenGuiAction();
 

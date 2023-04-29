@@ -267,8 +267,7 @@ class PersistentPaginatedGui extends PaginatedGui implements Serializable {
      */
     @Override
     public void decodeGui(@NotNull final List<String> encodedItem) {
-        for (int i = 0; i < pages.size(); i++) {
-            final Page page = pages.get(i);
+        for (final Page page : pages) {
             //yamlConfiguration.loadFromString(new String(Base64.decodeBase64(encodedItem.get(i))));
             //noinspection unchecked
             final List<ItemStack> content = (List<ItemStack>) yamlConfiguration.get("inventory");

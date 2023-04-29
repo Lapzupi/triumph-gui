@@ -54,11 +54,10 @@ public final class InteractionModifierListener implements Listener {
      */
     @EventHandler
     public void onGuiClick(final InventoryClickEvent event) {
-        if (!(event.getInventory().getHolder() instanceof BaseGui)) return;
+        if (!(event.getInventory().getHolder() instanceof BaseGui gui)) return;
 
         // Gui
-        final BaseGui gui = (BaseGui) event.getInventory().getHolder();
-
+        
         // if player is trying to do a disabled action, cancel it
         if ((!gui.canPlaceItems() && isPlaceItemEvent(event)) || (!gui.canTakeItems() && isTakeItemEvent(event)) || (!gui.canSwapItems() && isSwapItemEvent(event)) || (!gui.canDropItems() && isDropItemEvent(event)) || (!gui.allowsOtherActions() && isOtherEvent(event))) {
             event.setCancelled(true);
@@ -75,11 +74,10 @@ public final class InteractionModifierListener implements Listener {
      */
     @EventHandler
     public void onGuiDrag(final InventoryDragEvent event) {
-        if (!(event.getInventory().getHolder() instanceof BaseGui)) return;
+        if (!(event.getInventory().getHolder() instanceof BaseGui gui)) return;
 
         // Gui
-        final BaseGui gui = (BaseGui) event.getInventory().getHolder();
-
+        
         // if players are allowed to place items on the GUI, or player is not dragging on GUI, return
         if (gui.canPlaceItems() || !isDraggingOnGui(event)) return;
 
