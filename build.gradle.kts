@@ -24,6 +24,7 @@ subprojects {
     dependencies {
         compileOnly("org.jetbrains:annotations:21.0.1")
         compileOnly("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")
+        compileOnly("org.apache.commons:commons-lang3:3.12.0")
 
         val adventureVersion = "4.13.1"
         api("net.kyori:adventure-api:$adventureVersion")
