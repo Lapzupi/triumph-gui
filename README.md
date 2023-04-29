@@ -1,4 +1,4 @@
-<img src="https://cdn.discordapp.com/attachments/431545763928211457/853353180271214662/mfthread.png">
+<img alt="header" src="https://cdn.discordapp.com/attachments/431545763928211457/853353180271214662/mfthread.png">
 <h1 align="center">Welcome to triumph-gui 👋</h1>
 <p>
   <img src="https://img.shields.io/github/license/TriumphTeam/triumph-gui?color=blue&style=flat-square"  alt="license"/>

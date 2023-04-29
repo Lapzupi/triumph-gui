@@ -23,9 +23,9 @@ subprojects {
 
     dependencies {
         compileOnly("org.jetbrains:annotations:21.0.1")
-        compileOnly("org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT")
+        compileOnly("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")
 
-        val adventureVersion = "4.11.0"
+        val adventureVersion = "4.13.1"
         api("net.kyori:adventure-api:$adventureVersion")
         api("net.kyori:adventure-text-serializer-legacy:$adventureVersion")
         api("net.kyori:adventure-text-serializer-gson:$adventureVersion")
@@ -40,8 +40,8 @@ subprojects {
 
     tasks {
         withType<JavaCompile> {
-            sourceCompatibility = "1.8"
-            targetCompatibility = "1.8"
+            sourceCompatibility = "17"
+            targetCompatibility = "17"
             options.encoding = "UTF-8"
         }
     }
